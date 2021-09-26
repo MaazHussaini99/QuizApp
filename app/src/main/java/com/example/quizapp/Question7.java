@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-public class Question2 extends AppCompatActivity {
+public class Question7 extends AppCompatActivity {
 
     int points;
 
@@ -16,28 +16,30 @@ public class Question2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question2);
+        setContentView(R.layout.activity_question7);
 
         Intent recInt = getIntent();
-        points = recInt.getIntExtra("Score1", points);
-        TextView scoreTextView = (TextView) findViewById(R.id.points);
-        scoreTextView.setText("Score is " + Integer.toString(points));
+        points = recInt.getIntExtra("Score6", points);
     }
 
     public void firstRadioButtons (View view){
 
-        if(view.getId() == R.id.questionOneB){
+        if(view.getId() == R.id.questionOneA){
             points++;
+
         }
+
     }
 
 
-    public void moveToQuestion3(View view) {
+    public void moveToFinal(View view) {
+
+
 
         TextView scoreTextView = (TextView) findViewById(R.id.points);
         scoreTextView.setText("Score is " + Integer.toString(points));
-        Intent intent = new Intent(this, Question3.class);
-        intent.putExtra("Score2", points);
+        Intent intent = new Intent(this, Final.class);
+        intent.putExtra("Score7", points);
         this.startActivity(intent);
 
     }
